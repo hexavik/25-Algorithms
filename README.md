@@ -2,8 +2,8 @@
 
 25 algorithms in Rust and C++ are documented and implemented in this repository. Although I have made every effort to keep the code simple, I am willing to accept criticism.
 
-- [ ] Linear Search
-- [ ] Binary Search
+- [x] Linear Search (C++, Rust)
+- [x] Binary Search (C++, Rust)
 - [ ] Breadth First Search (BFS)
 - [ ] Depth First Search (DFS)
 - [ ] Insertion Sort
