@@ -1,31 +1,67 @@
 # 25 Important Algorithms
 
-25 algorithms in Rust and C++ are documented and implemented in this repository. Although I have made every effort to keep the code simple, I am willing to accept criticism.
+This repository documents and implements **25 fundamental algorithms** in **C++** and **Rust**. The goal is to keep the code **clean**, **simple** ,and **well-documented**. Open to deedback and improvements!
 
-- [x] Linear Search (C++, Rust)
-- [x] Binary Search (C++, Rust)
-- [ ] Breadth First Search (BFS)
-- [ ] Depth First Search (DFS)
-- [ ] Insertion Sort
-- [ ] Selection Sort
-- [ ] Merge Sort
-- [ ] Quick Sort
-- [ ] Heap Sort
-- [ ] Counting Sort
-- [ ] Kruskal's Algorithm
-- [ ] Floyd Warshall Algorithm
-- [ ] Dijkastra's Algorithm
-- [ ] Bellman Ford Algorithm
-- [ ] Kadane's Algorithm
-- [ ] Lee Algorithm
-- [ ] Flood Fill Algorithm
-- [ ] Floyd's Cycle Detection Algorithm
-- [ ] Union Find Algorithm
-- [ ] Topological Sorting in a DAG
-- [ ] KMP Algorithm
-- [ ] Kahn's Topologiocal Sort Algorithm
-- [ ] Huffman Coding Compression Algorithm
-- [ ] Quickselect Algorithm
-- [ ] Boyer-Moore Majority Vote Algorithm
-- [ ] Euclid's Algorithm
-- [ ] In, Pre, Post order Tree Traversal
+## 📂 Repository Structure
+
+```bash
+25-Algorithms/
+│── cpp/         # C++ implementations
+│── rust/        # Rust implementations
+│── README.md    # Documentation
+│── CMakeLists.txt (for C++ projects)
+│── Cargo.toml   (for Rust projects)
+```
+
+## Algorithms Implemented
+
+| Algorithm | C++ | Rust | Description |
+|-|-|-|-|
+| Linear Search (C++, Rust) | :white_check_mark: | :white_check_mark: | Searches for an element in an array |
+| Binary Search (C++, Rust) | :white_check_mark: | :white_check_mark: | Searches in a shorted array using divide and conquer |
+| Breadth First Search (BFS) |  |  | Graph traversal algorithm |
+| Depth First Search (DFS) |  |  | Graph traversal algorithm |
+| Insertion Sort |  |  | Sorting algorithm |
+| Selection Sort |  |  | Sorting algorithm |
+| Merge Sort |  |  | Sorting algorithm using divide and conquer |
+| Quick Sort |  |  | Efficient sorting using partitioning |
+| Heap Sort |  |  | Sorting using heap data structure |
+| Counting Sort |  |  | Non-comparative sorting algorithm |
+| Kruskal's Algorithm |  |  | Minimum spanning tree algorithm |
+| Floyd Warshall Algorithm |  |  | Shortest path in weighted graphs |
+| Dijkastra's Algorithm |  |  | Shortest path algorithm |
+| Bellman Ford Algorithm |  |  | Shortest path with negative weights |
+| Kadane's Algorithm |  |  | Maximum sum subarray |
+| Lee Algorithm |  |  | Shortest path in a grid |
+| Flood Fill Algorithm |  |  | Graph traversal used in image filling |
+| Floyd's Cycle Detection Algorithm |  |  | Detects cycles in linked lists |
+| Union Find Algorithm |  |  | Disjooint set data structure |
+| Topological Sorting in a DAG |  |  | Ordering in Directed Acyclic Graphs |
+| KMP Algorithm |  |  | String matching algorithm |
+| Kahn's Topologiocal Sort Algorithm |  |  | Another way to order DAG |
+| Huffman Coding Compression Algorithm |  |  | Data compression algorithm |
+| Quickselect Algorithm |  |  | Selects k-th smallest element in an array |
+| Boyer-Moore Majority Vote Algorithm |  |  | Finds majority element in an array |
+| Euclid's Algorithm |  |  | Computes the greatest common divisor (GCD) |
+| In, Pre, Post order Tree Traversal |  |  | Different ways to traverse tress |
+
+## How to Run
+
+For C++ (CMake Build)
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+./binary_search # Example: Run Binary Search
+```
+
+For Rust (Cargo)
+
+```bash
+cargo run -p binary_search # Example: Run Binary Search
+```
+
+## Contributions & Feedback
+
+💡 Have suggestions or improvements? Feel free to contribute or open an issue!
