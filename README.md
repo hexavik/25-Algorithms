@@ -17,8 +17,8 @@ This repository documents and implements **25 fundamental algorithms** in **C++*
 
 | Algorithm | C++ | Rust | Description |
 |-|-|-|-|
-| Linear Search (C++, Rust) | :white_check_mark: | :white_check_mark: | Searches for an element in an array |
-| Binary Search (C++, Rust) | :white_check_mark: | :white_check_mark: | Searches in a shorted array using divide and conquer |
+| Linear Search | :white_check_mark: | :white_check_mark: | Searches for an element in an array |
+| Binary Search | :white_check_mark: | :white_check_mark: | Searches in a shorted array using divide and conquer |
 | Breadth First Search (BFS) |  |  | Graph traversal algorithm |
 | Depth First Search (DFS) |  |  | Graph traversal algorithm |
 | Insertion Sort |  |  | Sorting algorithm |
