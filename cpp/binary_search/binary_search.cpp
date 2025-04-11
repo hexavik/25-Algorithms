@@ -25,36 +25,36 @@
 #include <iostream>
 
 int binary_search(int arr[], int size, int element) {
-	// Assign min and max values
-	int min = 0;
-	int max = size - 1;
-	int mid;
+    // Assign min and max values
+    int min = 0;
+    int max = size - 1;
+    int mid;
 
-	while (min <= max) {
-		// Update the mid value
-		mid = min + (max - min) / 2;
+    while (min <= max) {
+        // Update the mid value
+        mid = min + (max - min) / 2;
 
-		// Compare the element with the value at arr[mid]
-		if (arr[mid] == element) {
-			return mid;
-		}
-		// Update min and max
-		arr[mid] > element ? max = mid - 1 : min = mid + 1;
-	}
+        // Compare the element with the value at arr[mid]
+        if (arr[mid] == element) {
+            return mid;
+        }
+        // Update min and max
+        arr[mid] > element ? max = mid - 1 : min = mid + 1;
+    }
 
-	return -1;
+    return -1;
 }
 
 int main() {
-	// Create a sorted array
-	int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+    // Create a sorted array
+    int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
 
-	// Calculate the array size
-	int arr_size = sizeof(arr) / sizeof(arr[0]);
-	auto result = binary_search(arr, arr_size, 34);
-	result != -1 ? 
-		std::cout << "Element found at index " << result << std::endl :
-		std::cout << "Element not found in the given array" << std::endl;
+    // Calculate the array size
+    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    auto result = binary_search(arr, arr_size, 34);
+    result != -1 ? 
+        std::cout << "Element found at index " << result << std::endl :
+        std::cout << "Element not found in the given array" << std::endl;
 
-	return 0;
+    return 0;
 }

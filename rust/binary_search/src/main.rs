@@ -1,21 +1,11 @@
-// The binary search identifies a target value's location within a sorted 
-// array. The center element of the array is what the binary search 
-// compares the target value to. If not, the half in which the target 
-// cannot lie is removed, and the search is then continued on the other 
-// half, using the middle element once more to compare to the target 
-// value. This process is repeated until the target value is discovered. 
-// The target is not in the array if the search yields a half that is 
-// empty.
-
-fn main() {
-    // Create a sorted array
-    let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90];
-
-    match binary_search(&arr, 10) {
-        Some(result) => println!("Element found at index {}", result),
-        None => println!("Element not found in the given array"),
-    };
-}
+/// The binary search identifies a target value's location within a sorted
+/// array. The center element of the array is what the binary search
+/// compares the target value to. If not, the half in which the target
+/// cannot lie is removed, and the search is then continued on the other
+/// half, using the middle element once more to compare to the target
+/// value. This process is repeated until the target value is discovered.
+/// The target is not in the array if the search yields a half that is
+/// empty.
 
 fn binary_search(arr: &[i32], element: i32) -> Option<i32> {
     let mut min = 0;
@@ -39,5 +29,15 @@ fn binary_search(arr: &[i32], element: i32) -> Option<i32> {
         };
     }
 
-     None
+    None
+}
+
+fn main() {
+    // Create a sorted array
+    let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+    match binary_search(&arr, 10) {
+        Some(result) => println!("Element found at index {}", result),
+        None => println!("Element not found in the given array"),
+    };
 }

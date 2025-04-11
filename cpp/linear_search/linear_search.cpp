@@ -28,24 +28,24 @@
  * @return int index of the found element or error as -1
  */
 int linear_search(int arr[], int size, int element) {
-	for (int i = 0; i < size; ++i) {
-		if (element == arr[i])
-			return i;
-	}
+    for (int i = 0; i < size; ++i) {
+        if (element == arr[i])
+            return i;
+    }
 
-	return -1;
+    return -1;
 }
 
 int main() {
-	// Create an array
-	int arr[] = {10, 40, 30, 50, 80, 90, 20, 70};
+    // Create an array
+    int arr[] = {10, 40, 30, 50, 80, 90, 20, 70};
 
-	// Calculate the array size
-	int array_size = sizeof(arr) / sizeof(arr[0]);
-	auto result = linear_search(arr, array_size, 20);
+    // Calculate the array size
+    int array_size = sizeof(arr) / sizeof(arr[0]);
+    auto result = linear_search(arr, array_size, 20);
 
-	(result == -1) ? std::cout << "Element not found" << std::endl
-					: std::cout << "Element found at " << result << std::endl;
+    (result == -1) ? std::cout << "Element not found" << std::endl
+                   : std::cout << "Element found at " << result << std::endl;
 
-	return 0;
+    return 0;
 }
