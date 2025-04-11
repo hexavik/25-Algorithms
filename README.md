@@ -1,6 +1,6 @@
 # 25 Important Algorithms
 
-This repository documents and implements **25 fundamental algorithms** in **C++** and **Rust**. The goal is to keep the code **clean**, **simple** ,and **well-documented**. Open to deedback and improvements!
+This repository documents and implements 25 fundamental algorithms in C++ and Rust. The goal is to keep the code clean, simple, and well-documented. We are open to feedback and improvements!
 
 ## 📂 Repository Structure
 
@@ -16,7 +16,7 @@ This repository documents and implements **25 fundamental algorithms** in **C++*
 ## Algorithms Implemented
 
 | Algorithm | C++ | Rust | Description |
-|-|-|-|-|
+|-|:----:|:----:|-|
 | Linear Search | :white_check_mark: | :white_check_mark: | Searches for an element in an array |
 | Binary Search | :white_check_mark: | :white_check_mark: | Searches in a shorted array using divide and conquer |
 | Breadth First Search (BFS) |  |  | Graph traversal algorithm |
