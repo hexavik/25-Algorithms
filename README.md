@@ -21,7 +21,7 @@ This repository documents and implements **25 fundamental algorithms** in **C++*
 | Binary Search | :white_check_mark: | :white_check_mark: | Searches in a shorted array using divide and conquer |
 | Breadth First Search (BFS) |  |  | Graph traversal algorithm |
 | Depth First Search (DFS) |  |  | Graph traversal algorithm |
-| Insertion Sort |  |  | Sorting algorithm |
+| Insertion Sort | :white_check_mark: |  | Sorting algorithm |
 | Selection Sort |  |  | Sorting algorithm |
 | Merge Sort |  |  | Sorting algorithm using divide and conquer |
 | Quick Sort |  |  | Efficient sorting using partitioning |

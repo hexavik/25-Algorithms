@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(cpp/binary_search)
 add_subdirectory(cpp/linear_search)
+add_subdirectory(cpp/insertion_sort)
