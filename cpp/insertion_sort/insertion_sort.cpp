@@ -33,7 +33,7 @@ void display_array(int * arr, size_t arr_len) {
  * @brief Implements insertion sort to sort the input array
  * 
  * @param arr Unsorted input array
- * @param arr_size Input length of the array
+ * @param arr_size Input length of the array (must be greater than 0)
  */
 void insertion_sort(int * arr, size_t arr_size) {
     if (arr_size < 1) {

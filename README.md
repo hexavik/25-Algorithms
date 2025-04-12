@@ -23,7 +23,7 @@ This repository documents and implements 25 fundamental algorithms in C++ and Ru
 | Depth First Search (DFS) |  |  | Graph traversal algorithm |
 | Insertion Sort | :white_check_mark: |  | Sorting algorithm |
 | Selection Sort | :white_check_mark: |  | Sorting algorithm |
-| Merge Sort |  |  | Sorting algorithm using divide and conquer |
+| Merge Sort | :white_check_mark: |  | Sorting algorithm using divide and conquer |
 | Quick Sort |  |  | Efficient sorting using partitioning |
 | Heap Sort |  |  | Sorting using heap data structure |
 | Counting Sort |  |  | Non-comparative sorting algorithm |
