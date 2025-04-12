@@ -1,0 +1,1 @@
+add_executable(selection_sort selection_sort.cpp)
