@@ -2,10 +2,11 @@
  * @file insertion_sort.cpp
  * @author Vikrant A. P. (vikrant_ap@hotmail.com)
  *
- * @brief Insertion sort sorts an array by traversing through each
- * element one by one and comparing it with all the elements to its 
- * left and swaps them the current element is lesser than the element
- * towards left.
+ * @brief
+ * Insertion sort sorts an array by traversing through each element 
+ * one by one and comparing it with all the elements to its left and 
+ * swaps them the current element is lesser than the element towards 
+ * left.
  *
  * 1. Pick up the element at index 1 and store it in temp.
  * 2. Compare temp with the all elements on the left side of it.
@@ -15,31 +16,24 @@
  * 4. Pick up the element at next index and follow the same steps
  *    from 2 till 3.
  * 5. Display the sorted array.
+ *
  */
 
-
-#include <cstddef>
-#include <cstdio>
 #include <iostream>
-
-void swap(int &a, int &b) {
-    int temp = a;
-    a = b;
-    b = temp;
-}
+#include <utility>
 
 void display_array(int * arr, size_t arr_len) {
     for (int i = 0; i < arr_len; ++i) {
-        printf("%d, ", arr[i]);
+        std::cout << arr[i] << ", ";
     }
-    printf("\n");
+    std::cout << std::endl;
 }
 
 /**
  * @brief Implements insertion sort to sort the input array
  * 
- * @param arr Input array
- * @param arr_size Input length of the array (must be greater than 0)
+ * @param arr Unsorted input array
+ * @param arr_size Input length of the array
  */
 void insertion_sort(int * arr, size_t arr_size) {
     if (arr_size < 1) {
@@ -52,7 +46,7 @@ void insertion_sort(int * arr, size_t arr_size) {
         temp = arr[i];
         for (int j = i - 1; j >= 0; --j) {
             if (temp < arr[j]) {
-                swap(arr[j + 1], arr[j]);
+                std::swap(arr[j + 1], arr[j]);
             }
         }
     }
