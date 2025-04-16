@@ -95,7 +95,7 @@ int main() {
     // Calculate the array length
     size_t arr_len = sizeof(arr) / sizeof(arr[0]);
 
-    quick_sort(arr, 0, arr_len - 1);\
+    quick_sort(arr, 0, arr_len - 1);
     display_array(arr, arr_len);
 
     return 0;
