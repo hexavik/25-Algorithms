@@ -26,7 +26,7 @@ This repository documents and implements 25 fundamental algorithms in C++ and Ru
 | Merge Sort | :white_check_mark: |  | Sorting algorithm using divide and conquer |
 | Quick Sort | :white_check_mark: |  | Efficient sorting using partitioning |
 | Heap Sort | :white_check_mark: |  | Sorting using heap data structure |
-| Counting Sort |  |  | Non-comparative sorting algorithm |
+| Counting Sort | :white_check_mark: |  | Non-comparative sorting algorithm |
 | Kruskal's Algorithm |  |  | Minimum spanning tree algorithm |
 | Floyd Warshall Algorithm |  |  | Shortest path in weighted graphs |
 | Dijkastra's Algorithm |  |  | Shortest path algorithm |
