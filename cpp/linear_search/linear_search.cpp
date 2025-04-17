@@ -16,19 +16,21 @@
  * 4. If the key matches, return the index, else increment i by 1
  */
 
+#include <array>
 #include <iostream>
 
 /**
  * @brief Search an element in the given array and return its index. 
  * If the element absent then return -1.
  * 
- * @param arr input array
- * @param size size of the array
- * @param element the value to search
- * @return int index of the found element or error as -1
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr Input sorted/unsorted array
+ * @param element Value that needs to be searched
+ * @return int Index of the element if found, else -1
  */
-int linear_search(int arr[], int size, int element) {
-    for (int i = 0; i < size; ++i) {
+template <std::size_t N>
+int linear_search(std::array<int, N>& arr, int element) {
+    for (int i = 0; i < arr.size(); ++i) {
         if (element == arr[i])
             return i;
     }
@@ -38,11 +40,9 @@ int linear_search(int arr[], int size, int element) {
 
 int main() {
     // Create an array
-    int arr[] = {10, 40, 30, 50, 80, 90, 20, 70};
+    std::array<int, 8> arr = {10, 40, 30, 50, 80, 90, 20, 70};
 
-    // Calculate the array size
-    int array_size = sizeof(arr) / sizeof(arr[0]);
-    auto result = linear_search(arr, array_size, 20);
+    auto result = linear_search(arr, 20);
 
     (result == -1) ? std::cout << "Element not found" << std::endl
                    : std::cout << "Element found at " << result << std::endl;

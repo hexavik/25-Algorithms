@@ -17,14 +17,16 @@
  * 
  */
 
+#include <array>
 #include <iostream>
 #include <utility>
 
-void display_array(const int * arr, size_t arr_len) {
-    for (size_t i = 0; i < arr_len; ++i) {
-        std::cout << arr[i] << ", ";
+template <std::size_t N>
+void display_array(const std::array<int, N> arr) {
+    for (auto val : arr) {
+        std::cout << val << ", ";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }
 
 /**
@@ -33,12 +35,14 @@ void display_array(const int * arr, size_t arr_len) {
  * smaller than the pivot are swapped to left and larger ones swapped
  * to the right.
  * 
- * @param arr Input unsorted array
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr Unsorted input array
  * @param low Lowest index of the sub-array
  * @param high Highest index of the sub-array
- * @return int Split index
+ * @return int Split index to create two sub-arrays
  */
-int split(int * arr, int low, int high) {
+template <std::size_t N>
+int split(std::array<int, N>& arr, int low, int high) {
     //
     // Select the pivot
     //
@@ -75,11 +79,13 @@ int split(int * arr, int low, int high) {
  * @brief Sorts an array using quick sort algorithm in recursive 
  * approach.
  * 
- * @param arr Input unsorted array
- * @param low Lowest index of the array (initially zero)
- * @param high Highest index of the array (total size of the array - 1)
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr Unsorted input array
+ * @param low Lowest index of the array or the sub-array
+ * @param high Highest index of the array or the sub-array
  */
-void quick_sort(int * arr, int low, int high) {
+template <std::size_t N>
+void quick_sort(std::array<int, N>& arr, int low, int high) {
     if (low < high) {
         auto split_index = split(arr, low, high);
         
@@ -90,13 +96,10 @@ void quick_sort(int * arr, int low, int high) {
 
 int main() {
     // Input array
-    int arr[] = {5, 9, 6, 4, 7, 2, 3, 1, 8};
+    std::array<int, 9> arr = {5, 9, 6, 4, 7, 2, 3, 1, 8};
 
-    // Calculate the array length
-    size_t arr_len = sizeof(arr) / sizeof(arr[0]);
-
-    quick_sort(arr, 0, arr_len - 1);
-    display_array(arr, arr_len);
+    quick_sort(arr, 0, arr.size() - 1);
+    display_array(arr);
 
     return 0;
 }

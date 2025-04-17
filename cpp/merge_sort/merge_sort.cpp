@@ -13,14 +13,16 @@
  * 
  */
 
+#include <array>
 #include <iostream>
 #include <vector>
 
-void display_array(const int * arr, size_t arr_len) {
-    for (size_t i = 0; i < arr_len; ++i) {
-        std::cout << arr[i] << ", ";
+template <std::size_t N>
+void display_array(const std::array<int, N> arr) {
+    for (auto val : arr) {
+        std::cout << val << ", ";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }
 
 /**
@@ -29,12 +31,14 @@ void display_array(const int * arr, size_t arr_len) {
  * of the array and only the elements within given indices will be 
  * affected (between index `l` to index `r`).
  * 
- * @param arr Input array pointer
- * @param l Leftmost index (lowest index value)
- * @param m Median index of the two sub-arrays
- * @param r Rightmost index (highest index value)
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr Unsorted input array
+ * @param l Lowest index value at left
+ * @param m Median index value
+ * @param r Largest index value at right
  */
-void merge(int * arr, int l, int m, int r) {
+template <std::size_t N>
+void merge(std::array<int, N>& arr, int l, int m, int r) {
     //
     // Create a vector for a temporary storage. This is cleaner and 
     // safer than the dynamic allocation for the merging two array
@@ -79,7 +83,8 @@ void merge(int * arr, int l, int m, int r) {
     }
 }
 
-void merge_sort(int * arr, int l, int r) {
+template <std::size_t N>
+void merge_sort(std::array<int, N>& arr, int l, int r) {
     if (r - l < 2) {
         return;
     }
@@ -101,13 +106,10 @@ void merge_sort(int * arr, int l, int r) {
 
 int main() {
     // Input array
-    int arr[] = {5, 9, 6, 4, 7, 2, 3, 1, 8};
+    std::array<int, 9> arr = {5, 9, 6, 4, 7, 2, 3, 1, 8};
 
-    // Calculate the array length
-    size_t arr_len = sizeof(arr) / sizeof(arr[0]);
-
-    merge_sort(arr, 0, arr_len);
-    display_array(arr, arr_len);
+    merge_sort(arr, 0, arr.size());
+    display_array(arr);
 
     return 0;
 }

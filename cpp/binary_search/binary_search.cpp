@@ -22,12 +22,24 @@
  * 7. Update the max = mid and then recalculate the mid and follow the same procedure
  */
 
+#include <array>
 #include <iostream>
 
-int binary_search(int arr[], int size, int element) {
+/**
+ * @brief Splits an array into two halves and search the element based
+ * on the comparison of it against the value at mid, if it is greater
+ * than it then search element in right half, else left half.
+ * 
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr input sorted array
+ * @param element Value that needs to be searched
+ * @return int Index of the element if found, else -1
+ */
+template <std::size_t N>
+int binary_search(std::array<int, N>& arr, int element) {
     // Assign min and max values
     int min = 0;
-    int max = size - 1;
+    int max = arr.size() - 1;
     int mid;
 
     while (min <= max) {
@@ -47,11 +59,9 @@ int binary_search(int arr[], int size, int element) {
 
 int main() {
     // Create a sorted array
-    int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+    std::array<int, 9> arr = {10, 20, 30, 40, 50, 60, 70, 80, 90};
 
-    // Calculate the array size
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
-    auto result = binary_search(arr, arr_size, 34);
+    auto result = binary_search(arr, 40);
     result != -1 ? 
         std::cout << "Element found at index " << result << std::endl :
         std::cout << "Element not found in the given array" << std::endl;

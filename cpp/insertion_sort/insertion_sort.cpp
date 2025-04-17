@@ -19,30 +19,32 @@
  *
  */
 
+#include <array>
 #include <iostream>
-#include <utility>
 
-void display_array(int * arr, size_t arr_len) {
-    for (int i = 0; i < arr_len; ++i) {
-        std::cout << arr[i] << ", ";
+template <std::size_t N>
+void display_array(const std::array<int, N> arr) {
+    for (auto val : arr) {
+        std::cout << val << ", ";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }
 
 /**
- * @brief Implements insertion sort to sort the input array
+ * @brief Sorts an array using insertion sorting algorithm.
  * 
+ * @tparam N Get the size of an array based on the input std::array
  * @param arr Unsorted input array
- * @param arr_size Input length of the array (must be greater than 0)
  */
-void insertion_sort(int * arr, size_t arr_size) {
-    if (arr_size < 1) {
+template <std::size_t N>
+void insertion_sort(std::array<int, N>& arr) {
+    if (arr.size() < 1) {
         std::cerr << "Error: Invalid Array Size\n";
         return;
     }
 
     int temp = 0;
-    for (int i = 1; i < arr_size; ++i) {
+    for (int i = 1; i < arr.size(); ++i) {
         temp = arr[i];
         for (int j = i - 1; j >= 0; --j) {
             if (temp < arr[j]) {
@@ -54,13 +56,10 @@ void insertion_sort(int * arr, size_t arr_size) {
 
 int main() {
     // Input array
-    int arr[] = {5, 9, 6, 4, 7, 2, 3, 1, 8};
+    std::array<int, 9> arr = {5, 9, 6, 4, 7, 2, 3, 1, 8};
 
-    // Calculate the array length
-    size_t arr_len = sizeof(arr) / sizeof(arr[0]);
-
-    insertion_sort(arr, arr_len);
-    display_array(arr, arr_len);
+    insertion_sort(arr);
+    display_array(arr);
 
     return 0;
 }

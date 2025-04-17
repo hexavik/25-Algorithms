@@ -15,15 +15,16 @@
  */
 
 #include <algorithm>
-#include <cstddef>
+#include <array>
 #include <iostream>
 #include <utility>
 
-void display_array(const int * arr, size_t arr_len) {
-    for (size_t i = 0; i < arr_len; ++i) {
-        std::cout << arr[i] << ", ";
+template <std::size_t N>
+void display_array(const std::array<int, N> arr) {
+    for (auto val : arr) {
+        std::cout << val << ", ";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }
 
 /**
@@ -31,11 +32,13 @@ void display_array(const int * arr, size_t arr_len) {
  * 
  * @param arr Input array
  * @param arr_len Input array size
- * NOTE: Use this function for logging and debugging
+ * 
+ * @note Use this function for logging and debugging
  */
-// void display_heap(const int * arr, size_t arr_len) {
+//template <std::size_t N>
+// void display_heap(const std::array<int, N> arr) {
 //     int level = 1;
-//     for (size_t i = 0; i < arr_len; ++i) {
+//     for (size_t i = 0; i < arr.size(); ++i) {
 //         std::cout << arr[i] << ", ";
 //         if (i == pow(2, level) - 2) {
 //             std::cout << "\n";
@@ -51,11 +54,13 @@ void display_array(const int * arr, size_t arr_len) {
  * The node will be swapped with the child node that is greather than 
  * it. This will give us largest element at the root node (index 0).
  * 
- * @param arr 
- * @param arr_size 
- * @param index 
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr Unsorted input array
+ * @param arr_size Size of the array
+ * @param index Current index of non-leaf node
  */
-void heapify_down(int * arr, size_t arr_size, size_t index) {
+template <std::size_t N>
+void heapify_down(std::array<int, N>& arr, size_t arr_size, size_t index) {
     size_t largest = index;
     size_t left = 2 * index + 1;
     size_t right = 2 * index + 2;
@@ -81,10 +86,12 @@ void heapify_down(int * arr, size_t arr_size, size_t index) {
  * non-leaf node at the bottom which is retrieved by (n / 2) - 1 where
  * `n` is the index of the last element of the 0 index based array.
  * 
- * @param arr Input unsorted array
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr Unsorted input array
  * @param arr_size Size of the array
  */
-void build_max_heap(int * arr, size_t arr_size) {
+template <std::size_t N>
+void build_max_heap(std::array<int, N>& arr, size_t arr_size) {
  
     for (int i = (arr_size / 2) - 1; i >= 0; --i) {
         heapify_down(arr, arr_size, i);
@@ -97,10 +104,12 @@ void build_max_heap(int * arr, size_t arr_size) {
  * element which is at index 0 with the leaf node at the bottom (or 
  * last index of the input array).
  * 
- * @param arr Input unsorted array
+ * @tparam N Get the size of an array based on the input std::array
+ * @param arr Unsorted input array
  * @param arr_size Size of the array
  */
-void heap_sort(int * arr, size_t arr_size) {
+template <std::size_t N>
+void heap_sort(std::array<int, N>& arr, size_t arr_size) {
     build_max_heap(arr, arr_size);
 
     for (size_t i = arr_size - 1; i > 0; --i) {
@@ -112,13 +121,10 @@ void heap_sort(int * arr, size_t arr_size) {
 
 int main() {
     // Input array
-    int arr[] = {5, 9, 6, 4, 7, 2, 3, 1, 8};
+    std::array<int , 9> arr = {5, 9, 6, 4, 7, 2, 3, 1, 8};
 
-    // Calculate the array length
-    size_t arr_len = sizeof(arr) / sizeof(arr[0]);
-
-    heap_sort(arr, arr_len);
-    display_array(arr, arr_len);
+    heap_sort(arr, arr.size());
+    display_array(arr);
 
     return 0;
 }
